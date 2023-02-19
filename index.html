@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+    character-card img {
+      max-width: 200px;
+    }
+    button {
+  cursor:pointer;
+  background-color:#4681f4;
+  color:white;
+  border-radius:10px;
+  padding:6px;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+  width:14%;
+  
+}
+    .buttons {
+  margin: 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; 
+}
+button:hover{
+  background-color:red;
+}
+button:focus{
+ background-color:red;
+}
+  </style>
+  <title>character-card</title>
+</head>
+
+<body>
+  <div class="buttons">
+  
+    <button class="copyCat">Copy</button>
+    <button id="del">Delete</button>
+    <button data-toggle-btn>Toggle Details</button> 
+    <button class="btnCN">Change Name</button>
+    <button class="btnBG">Change Background Color</button>
+    
+    </div>
+    <div id="app">
+  <character-card>
+    <ul>
+      Lightsaber go <i>brrr</i>
+    </ul>
+  </character-card>
+</div>
+  <script type="module" src="./src/character-card.js"></script>
+
+  <script>
+  //toggle det
+  document.querySelector('button[data-toggle-btn]').addEventListener('click', (e) => {
+  const details = document.querySelector('character-card').shadowRoot.querySelector('details')
+  console.log(details);
+  if (details.getAttribute('open')) {
+    details.removeAttribute('open');
+  }
+  else {
+    details.setAttribute('open','open');    
+  }
+});
+//duplicate
+document.querySelector('.copyCat').addEventListener('click', function(e) {
+  const itemToClone = document.querySelector('character-card').cloneNode();
+  document.querySelector('#app').appendChild(itemToClone);
+});
+
+//change name
+document.querySelector('.btnCN').addEventListener('click', function(e) {
+    let name = prompt("I think it needs a better name, don't you?");
+  if (name) {
+    document.querySelector('character-card').name = name;
+  }
+});
+
+// delete copy
+document.querySelector('#del').addEventListener('click', function(e) {
+  let wantsTo = confirm("Are you sure?");
+  if (wantsTo) {
+    if (document.querySelector('#app :last-child') !== document.querySelector('character-card')) {
+      document.querySelector('#app :last-child').remove();      
+    }
+    else {
+      alert("No can do");
+    }
+  }
+});
+</script>
+</body>
+
+</html>
