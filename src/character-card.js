@@ -35,11 +35,28 @@ img{
 }
 
 @media screen and (min-width:501px) and (max-width:800px) {
-
+ .lecard {
+  background-color:green;
+ }
 }
 @media screen and (max-width:500px) {
   details{
     display:none;
+  }
+  .outline {
+    font-weight: normal;
+  }
+  .outline h2  {
+    font-size: 17px;
+  }
+  .outline h3  {
+    font-size: 14px;
+  }
+  .lecard {
+    background-color: blue;
+  }
+  .img {
+    max-width: 200px;
   }
 }
 .buttons {
@@ -61,8 +78,8 @@ button:focus{
     this.description = 'Details';
     this.name='Some Nerd';
     this.title = 'Hello There';
-    this.top = 'Hello'
-    this.bottom = 'There'
+    this.top = 'Meme'
+    this.bottom = 'Goes Here'
   }
 
   render() {
