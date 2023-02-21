@@ -42,6 +42,9 @@ button:hover{
 button:focus{
  background-color:red;
 }
+li {
+  list-style: none;
+}
   </style>
   <title>character-card</title>
 </head>
@@ -59,7 +62,7 @@ button:focus{
     <div id="app">
   <character-card>
     <ul>
-      Lightsaber go <i>brrr</i>
+      <li>Lightsaber go <i>brrr</i></li>
     </ul>
   </character-card>
 </div>
@@ -79,8 +82,8 @@ button:focus{
 });
 //duplicate
 document.querySelector('.copyCat').addEventListener('click', function(e) {
-  const itemToClone = document.querySelector('character-card').cloneNode();
-  document.querySelector('#app').appendChild(itemToClone);
+  const copy = document.querySelector('character-card').cloneNode();
+  document.querySelector('#app').appendChild(copy);
 });
 
 //change name
