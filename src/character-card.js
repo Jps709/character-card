@@ -8,6 +8,8 @@ export class CharacterCard extends LitElement {
       name: { type: String},
       title: {type: String},
       description: {type: String},
+      top: {type: String},
+      bottom:{type: String}
 
     }
   }
