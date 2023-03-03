@@ -9,29 +9,37 @@ export class CharacterCard extends LitElement {
       title: {type: String},
       description: {type: String},
       top: {type: String},
-      bottom:{type: String}
+      bottom:{type: String},
+      shadowColor: {type: Boolean, reflect: true, attribute: 'shadow-color'},
 
-    }
+    };
   }
 
   static get styles() {
     return css`
 
-.outline {
- justify-content:center;
- display:flex;
- min-height:400px;
+:host([shadow-color]) .lecard {
+  box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
 }
+
+:host {
+  display: inline-block;
+}
+
+
 
 .lecard{
  text-align: center;
- border: solid grey 6px;
+ border: solid black 6px;
  max-width:400px;
  border-radius: 20px;
  margin-bottom: 10px;
  font-size:20px;
- background-color:white;
+ background-color:grey;
+ flex-direction: column;
+ transition: 0.3s;
 }
+
 img{
   width: 350px;
 }
@@ -82,6 +90,7 @@ button:focus{
     this.title = 'Hello There';
     this.top = 'Meme'
     this.bottom = 'Goes Here'
+    this.shadowColor = false;
   }
 
   render() {

@@ -69,6 +69,15 @@ li {
   <script type="module" src="./src/character-card.js"></script>
 
   <script>
+
+document.querySelector('character-card').addEventListener('mouseover', (e) => {
+  document.querySelector('character-card').shadowColor = true;
+});
+
+document.querySelector('character-card').addEventListener('mouseleave', (e) => {
+  document.querySelector('character-card').shadowColor = "";
+});
+
   //toggle det
   document.querySelector('button[data-toggle-btn]').addEventListener('click', (e) => {
   const details = document.querySelector('character-card').shadowRoot.querySelector('details')
