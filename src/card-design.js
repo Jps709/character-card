@@ -20,8 +20,8 @@ export class CardDesign extends LitElement {
     }
 
      updateCard(){
-        const address = new URL('../assets/char.json', import.meta.url).href
-       const data =  fetch(address).then((response) => {
+        const address = new URL('../api/char', import.meta.url).href
+      fetch(address).then((response) => {
         if (response.ok) {
             return response.json()
         }
@@ -30,7 +30,6 @@ export class CardDesign extends LitElement {
        .then((data) => {
         this.character = data;
        });
-       console.log(data); 
     }
 
     static get style() {
