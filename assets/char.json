@@ -1,0 +1,26 @@
+[
+    {
+        "description": "Details",
+        "name": "Some Nerd",
+        "title":  "Hello There",
+        "top": " Meme",
+        "bottom":  "Goes Here",
+        "characterImg":  "https://i.kym-cdn.com/entries/icons/original/000/029/079/hellothere.jpg"   
+    },
+    {
+        "description": "Details",
+        "name": "Some Nerd",
+        "title":  "Hello There",
+        "top": " Meme",
+        "bottom":  "Goes Here",
+        "characterImg":  "https://i.kym-cdn.com/entries/icons/original/000/029/079/hellothere.jpg"
+    },
+    {
+        "description": "Details",
+        "name": "Some Nerd",
+        "title":  "Hello There",
+        "top": " Meme",
+        "bottom":  "Goes Here",
+        "characterImg":  "https://i.kym-cdn.com/entries/icons/original/000/029/079/hellothere.jpg"
+    }
+]

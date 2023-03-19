@@ -50,6 +50,9 @@ li {
 </head>
 
 <body>
+
+<card-design></card-design>
+
   <div class="buttons">
   
     <button class="copyCat">Copy</button>
@@ -66,8 +69,11 @@ li {
     </ul>
   </character-card>
 </div>
-  <script type="module" src="./src/character-card.js"></script>
-
+<script type ="module">
+  import "./src/character-card.js";
+  import "./src/card-design.js";
+</script>
+ 
   <script>
 
 document.querySelector('character-card').addEventListener('mouseover', (e) => {

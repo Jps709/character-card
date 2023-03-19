@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-const characterImg = new URL('../assets/obi.jpg', import.meta.url).href;
+
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 export class CharacterCard extends LitElement {
@@ -11,6 +11,7 @@ export class CharacterCard extends LitElement {
       top: {type: String},
       bottom:{type: String},
       shadowColor: {type: Boolean, reflect: true, attribute: 'shadow-color'},
+      characterImg: {type: String},
 
     };
   }
@@ -91,6 +92,7 @@ button:focus{
     this.top = 'Meme'
     this.bottom = 'Goes Here'
     this.shadowColor = false;
+    this.characterImg = new URL('../assets/obi.jpg', import.meta.url).href;
   }
 
   render() {
@@ -98,7 +100,7 @@ button:focus{
 <div class="outline">
       <div class="lecard">
       <h2>${this.name}</h2>
-     <meme-maker image-url="${characterImg}"
+     <meme-maker image-url="${this.characterImg}"
      top-text="${this.top}"
      bottom-text="${this.bottom}">
   </meme-maker>
