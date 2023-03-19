@@ -20,12 +20,12 @@ export class CardDesign extends LitElement {
     }
 
      updateCard(){
-        const address = new URL('../api/char.js', import.meta.url).href
+        const address = new URL('../api/char', import.meta.url).href
       fetch(address).then((response) => {
         if (response.ok) {
             return response.json()
         }
-        return[];
+        return [];
        })
        .then((data) => {
         this.character = data;

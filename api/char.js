@@ -1,7 +1,7 @@
 
 export default async function handler(request, res) {
 
-const design = [
+const char = [
     {
         "description": "Details",
         "name": "Some Nerd",
@@ -41,7 +41,7 @@ const design = [
         "top": " Meme",
         "bottom":  "Goes Here",
         "characterImg":  "https://i.kym-cdn.com/entries/icons/original/000/029/079/hellothere.jpg"   
-    },
+    }
 ];
 
 res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
